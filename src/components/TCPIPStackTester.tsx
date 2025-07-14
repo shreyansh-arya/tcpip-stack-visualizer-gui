@@ -19,8 +19,10 @@ import {
   Activity,
   Network,
   Target,
-  BarChart3
+  BarChart3,
+  TestTube
 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 import StateVisualizer from "./StateVisualizer";
 import PacketTrace from "./PacketTrace";
 import CoverageDisplay from "./CoverageDisplay";
@@ -60,6 +62,8 @@ export default function TCPIPStackTester() {
   const [dataIn, setDataIn] = useState("S");
   const [checksumIn, setChecksumIn] = useState("AA");
   const [validIn, setValidIn] = useState(true);
+  
+  const { toast } = useToast();
   
   // Outputs
   const [dataOut, setDataOut] = useState("");
@@ -198,6 +202,26 @@ export default function TCPIPStackTester() {
     }
   };
 
+  const runFailTest = (testType: string) => {
+    switch (testType) {
+      case "bad_checksum":
+        setDataIn("S");
+        setChecksumIn("42");
+        toast({ title: "Bad Checksum Test", description: "Sending incorrect checksum", variant: "destructive" });
+        break;
+      case "wrong_sequence":
+        setCurrentState("IDLE");
+        setDataIn("K");
+        toast({ title: "Wrong Sequence Test", description: "Sending K before SYN", variant: "destructive" });
+        break;
+      case "invalid_data":
+        setDataIn("Q");
+        toast({ title: "Invalid Data Test", description: "Sending non-protocol data", variant: "destructive" });
+        break;
+    }
+    setTimeout(() => sendPacket(), 500);
+  };
+
   return (
     <div className="min-h-screen bg-background p-6">
       <div className="max-w-7xl mx-auto space-y-6">
@@ -304,6 +328,21 @@ export default function TCPIPStackTester() {
                   <Button onClick={resetDUT} variant="outline" className="w-full" size="sm">
                     <RotateCcw className="h-4 w-4 mr-1" />
                     Reset DUT
+                  </Button>
+                </div>
+                <div className="space-y-1">
+                  <Label className="text-xs text-muted-foreground">Fail Tests</Label>
+                  <Button onClick={() => runFailTest("bad_checksum")} variant="destructive" className="w-full" size="sm">
+                    <TestTube className="h-3 w-3 mr-1" />
+                    Bad Checksum
+                  </Button>
+                  <Button onClick={() => runFailTest("wrong_sequence")} variant="destructive" className="w-full" size="sm">
+                    <AlertTriangle className="h-3 w-3 mr-1" />
+                    Wrong Sequence
+                  </Button>
+                  <Button onClick={() => runFailTest("invalid_data")} variant="destructive" className="w-full" size="sm">
+                    <XCircle className="h-3 w-3 mr-1" />
+                    Invalid Data
                   </Button>
                 </div>
               </div>

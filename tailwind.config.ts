@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -42,7 +43,8 @@ export default {
 				},
 				accent: {
 					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+					foreground: 'hsl(var(--accent-foreground))',
+					glow: 'hsl(var(--accent-glow))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -64,11 +66,24 @@ export default {
 					DEFAULT: 'hsl(var(--info))',
 					foreground: 'hsl(var(--info-foreground))'
 				},
+				error: {
+					DEFAULT: 'hsl(var(--error))',
+					foreground: 'hsl(var(--error-foreground))'
+				},
 				'state-idle': 'hsl(var(--state-idle))',
 				'state-syn': 'hsl(var(--state-syn))',
 				'state-ack': 'hsl(var(--state-ack))',
+				'signal-high': 'hsl(var(--signal-high))',
+				'signal-low': 'hsl(var(--signal-low))',
+				'signal-data': 'hsl(var(--signal-data))',
+				'signal-error': 'hsl(var(--signal-error))',
 				'packet-bg': 'hsl(var(--packet-bg))',
+				'packet-border': 'hsl(var(--packet-border))',
 				'waveform-bg': 'hsl(var(--waveform-bg))',
+				'waveform-grid': 'hsl(var(--waveform-grid))',
+				'waveform-border': 'hsl(var(--waveform-border))',
+				'test-bg': 'hsl(var(--test-bg))',
+				'test-border': 'hsl(var(--test-border))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -79,6 +94,19 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-secondary': 'var(--gradient-secondary)',
+				'gradient-accent': 'var(--gradient-accent)',
+				'gradient-state': 'var(--gradient-state)',
+				'gradient-waveform': 'var(--gradient-waveform)'
+			},
+			boxShadow: {
+				'card': 'var(--shadow-card)',
+				'elevated': 'var(--shadow-elevated)',
+				'glow': 'var(--shadow-glow)',
+				'accent': 'var(--shadow-accent)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

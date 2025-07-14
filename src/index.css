@@ -17,24 +17,26 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 220 10% 15%;
 
-    --primary: 210 100% 50%;
+    --primary: 256 100% 65%;
     --primary-foreground: 0 0% 100%;
+    --primary-glow: 256 85% 75%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 220 10% 15%;
+    --secondary: 240 6% 92%;
+    --secondary-foreground: 240 5% 26%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 8% 46%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
 
-    --accent: 142 76% 36%;
+    --accent: 168 76% 42%;
     --accent-foreground: 0 0% 100%;
+    --accent-glow: 168 65% 55%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 210 100% 50%;
+    --border: 240 6% 90%;
+    --input: 240 6% 95%;
+    --ring: 256 100% 65%;
 
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
@@ -45,18 +47,38 @@ All colors MUST be HSL.
     --info: 217 91% 60%;
     --info-foreground: 0 0% 100%;
     
-    --state-idle: 200 18% 46%;
-    --state-syn: 142 76% 36%;
-    --state-ack: 210 100% 50%;
+    --error: 0 84% 60%;
+    --error-foreground: 0 0% 100%;
     
-    --packet-bg: 220 13% 98%;
-    --waveform-bg: 220 25% 97%;
+    --state-idle: 240 15% 55%;
+    --state-syn: 168 76% 42%;
+    --state-ack: 256 100% 65%;
     
-    --gradient-primary: linear-gradient(135deg, hsl(210 100% 50%), hsl(142 76% 36%));
-    --gradient-state: linear-gradient(90deg, hsl(200 18% 46%), hsl(142 76% 36%), hsl(210 100% 50%));
+    --signal-high: 256 100% 65%;
+    --signal-low: 240 15% 75%;
+    --signal-data: 168 76% 42%;
+    --signal-error: 0 84% 60%;
     
-    --shadow-card: 0 4px 6px -1px hsl(220 13% 91% / 0.1), 0 2px 4px -1px hsl(220 13% 91% / 0.06);
-    --shadow-elevated: 0 10px 15px -3px hsl(220 13% 91% / 0.1), 0 4px 6px -2px hsl(220 13% 91% / 0.05);
+    --waveform-bg: 240 8% 98%;
+    --waveform-grid: 240 6% 85%;
+    --waveform-border: 240 6% 80%;
+    
+    --packet-bg: 240 8% 97%;
+    --packet-border: 240 6% 85%;
+    
+    --test-bg: 256 15% 98%;
+    --test-border: 256 10% 90%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(256 100% 65%), hsl(168 76% 42%));
+    --gradient-secondary: linear-gradient(135deg, hsl(240 6% 92%), hsl(240 5% 96%));
+    --gradient-accent: linear-gradient(135deg, hsl(168 76% 42%), hsl(168 65% 55%));
+    --gradient-state: linear-gradient(90deg, hsl(240 15% 55%), hsl(168 76% 42%), hsl(256 100% 65%));
+    --gradient-waveform: linear-gradient(180deg, hsl(240 8% 98%), hsl(240 6% 95%));
+    
+    --shadow-card: 0 4px 6px -1px hsl(240 6% 80% / 0.1), 0 2px 4px -1px hsl(240 6% 80% / 0.06);
+    --shadow-elevated: 0 10px 25px -5px hsl(256 100% 65% / 0.15), 0 8px 10px -6px hsl(256 100% 65% / 0.1);
+    --shadow-glow: 0 0 20px hsl(256 100% 65% / 0.3);
+    --shadow-accent: 0 4px 20px hsl(168 76% 42% / 0.2);
 
     --radius: 0.5rem;
 
